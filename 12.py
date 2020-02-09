@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy.random as rn
 import time
 import sys
+from tqdm import trange
 
 start_time = time.time()
 
@@ -27,13 +28,17 @@ def factorize(n):
 
     return factor_list, len(factor_list)
 
+
+
 def main():
 
-    a, b = factorize(28)
-    print(a)
-    print(b)
+    for ii in trange(10000, 20000):
 
+        tri = ii*(ii+1)/2
+        _, num_factors = factorize(tri)
 
+        if num_factors > 500:
+            print(tri)
 
 if __name__ == "__main__":
     main()
