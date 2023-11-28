@@ -27,12 +27,12 @@ def main():
     len_seq = np.zeros(1000000)
 
     for ii in trange(500001, 1000001):
-        
-        len_seq[ii] = collatz(ii)
-        
 
+        if len_seq[ii-1] == 0:
+            len_seq[ii-1] = collatz(ii)
 
-    
+    len_seq = len_seq.tolist()
+    print(len_seq.index(max(len_seq)) + 1)
 
 
 

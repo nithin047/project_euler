@@ -29,9 +29,10 @@ def factorize(n):
 
 def main():
 
-    a, b = factorize(28)
-    print(a)
-    print(b)
+    x = np.linspace(1, 1e6)
+    plt.plot(x, x)
+    plt.plot(x, (9**5)*(np.ceil(np.log10(x))))
+    plt.show()
 
 
 
